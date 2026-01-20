@@ -161,6 +161,3 @@ This project is open source and available under the MIT License.
 - Hugging Face Transformers
 - Google Translate & Text-to-Speech APIs
 - spaCy NLP library
-
-
-I am 
