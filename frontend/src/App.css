@@ -1,0 +1,296 @@
+/* Light mode (default) */
+:root {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --sidebar-bg: #ffffff;
+  --component-bg: #ffffff;
+  --border-color: #e0e0e0;
+  --main-bg: #f8f9fa;
+}
+
+/* Dark mode */
+body.dark-mode {
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --sidebar-bg: #2d2d2d;
+  --component-bg: #333333;
+  --border-color: #404040;
+  --main-bg: #1a1a1a;
+}
+
+/* Apply variables */
+.app {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+  border-color: var(--border-color);
+}
+
+.summary-container, .video-player, .error-message {
+  background-color: var(--component-bg);
+  border-color: var(--border-color);
+  color: #f8f9fa;
+}
+
+/* Theme button styles */
+.theme-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-button:hover {
+  opacity: 0.8;
+  background-color: var(--border-color);
+}
+
+/* Add smooth transitions */
+* {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--main-bg);
+  color: var(--text-color);
+}
+
+.sidebar {
+  width: 400px;
+  padding: 2rem;
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  color: var(--text-color);
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--main-bg);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.url-input,
+.select-input {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: var(--component-bg);
+  color: var(--text-color);
+}
+
+.url-input:focus,
+.select-input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.summarize-btn {
+  padding: 0.875rem 1.5rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summarize-btn:hover {
+  background-color: #4CAF50;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.summarize-btn:disabled {
+  background-color: #e9ecef;
+  color: #adb5bd;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.video-container {
+  margin: 0 auto 2rem auto;
+  width: max-content;
+  height: max-content;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.summary-container {
+  padding: 2rem;
+  background-color: var(--component-bg);
+  color: var(--text-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  line-height: 1.6;
+}
+
+.error-container {
+  padding: 1rem 1.5rem;
+  background-color: #fff5f5;
+  border: 1px solid #feb2b2;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.error-message {
+  color: #c53030;
+  margin: 0;
+  font-weight: 500;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background-color: var(--component-bg);
+  color: var(--text-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #f0f0f0;
+  border-top: 3px solid #4a90e2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.loading-container p {
+  color: #4a5568;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add these new responsive styles */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+}
+
+.audio-player-container {
+  margin-bottom: 1.5rem;
+  width: 100%;
+  background: var(--component-bg);
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.audio-player {
+  width: 100%;
+  height: 40px;
+}
+
+/* Styling the audio player controls (works in most modern browsers) */
+audio::-webkit-media-controls-panel {
+  background-color: #f8f9fa;
+}
+
+audio::-webkit-media-controls-play-button {
+  background-color: #4a90e2;
+  border-radius: 50%;
+}
+
+audio::-webkit-media-controls-play-button:hover {
+  background-color: #357abd;
+}
+
+audio::-webkit-media-controls-timeline {
+  background-color: #e9ecef;
+  border-radius: 25px;
+  margin: 0 15px;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  color: #2c3e50;
+}
+
+.summary-text {
+  line-height: 1.6;
+  color: #2c3e50;
+}
+
+/* Update text colors for all relevant elements */
+.app, 
+.sidebar,
+.main-content,
+.summary-container,
+.summary-text,
+.loading-container p,
+h1, h2, h3, h4, h5, h6,
+p,
+label,
+.url-input,
+.select-input {
+  color: var(--text-color);
+}
+
+/* Update loading text specifically */
+.loading-container p {
+  color: var(--text-color) !important;  /* Override any existing styles */
+}
+
+/* If you have any hardcoded text colors, update them */
+.summary-text {
+  line-height: 1.6;
+  color: var(--text-color);  /* Remove any hardcoded color like #2c3e50 */
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
