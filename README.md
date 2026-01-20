@@ -162,4 +162,3 @@ This project is open source and available under the MIT License.
 - Google Translate & Text-to-Speech APIs
 - spaCy NLP library
 
-A 
